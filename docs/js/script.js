@@ -130,13 +130,11 @@ document.addEventListener('DOMContentLoaded', () => {
         document.getElementById('heroDesc').textContent = texts[lang].heroDesc;
         document.getElementById('heroDesc2').textContent = texts[lang].heroDesc2;
 
-        // Navbar
         document.querySelector('[href="#about"]').textContent = texts[lang].navAbout;
         document.querySelector('[href="#portfolio"]').textContent = texts[lang].navPortfolio;
         document.querySelector('[href="#skills"]').textContent = texts[lang].navSkills;
         document.querySelector('[href="#contact"]').textContent = texts[lang].navContact;
 
-        // Portfolio
         document.getElementById('portfolioTitle').textContent = texts[lang].portfolioTitle;
         document.getElementById('proj1Title').textContent = texts[lang].proj1Title;
         document.getElementById('proj1Desc').textContent = texts[lang].proj1Desc;
@@ -151,19 +149,15 @@ document.addEventListener('DOMContentLoaded', () => {
         document.getElementById('proj6Title').textContent = texts[lang].proj6Title;
         document.getElementById('proj6Desc').textContent = texts[lang].proj6Desc;
 
-        // Skills
         document.getElementById('skillsTitle').textContent = texts[lang].skillsTitle;
 
-        // Contact Form
         document.getElementById('contactTitle').textContent = texts[lang].contactTitle;
         document.getElementById('name').placeholder = texts[lang].formNamePlaceholder;
         document.getElementById('email').placeholder = texts[lang].formEmailPlaceholder;
         document.getElementById('message').placeholder = texts[lang].formMessagePlaceholder;
 
-        // Footer
         document.getElementById('footerText').textContent = texts[lang].footerText;
 
-        // Button
         toggleLangBtn.textContent = texts[lang].langBtn;
     }
 
@@ -171,6 +165,7 @@ document.addEventListener('DOMContentLoaded', () => {
         isArabic = !isArabic;
         const lang = isArabic ? 'ar' : 'en';
         updateLanguage(lang);
+        localStorage.setItem('lang', lang);
     });
 
     if (localStorage.getItem('lang')) {
@@ -195,35 +190,38 @@ document.addEventListener('DOMContentLoaded', () => {
     const progressBars = document.querySelectorAll('.skill-progress .progress-bar');
     const skillsSection = document.getElementById('skills');
 
-    window.addEventListener('scroll', () => {
+    function fillProgressBars() {
         const sectionPos = skillsSection.getBoundingClientRect().top;
         const screenPos = window.innerHeight / 1.2;
         if (sectionPos < screenPos) {
             progressBars.forEach(bar => {
                 bar.style.width = bar.getAttribute('data-percentage') + '%';
             });
+            window.removeEventListener('scroll', fillProgressBars);
         }
-    });
+    }
+
+    fillProgressBars();
+    window.addEventListener('scroll', fillProgressBars);
+
+    // ==========================
+    // Contact Form
+    // ==========================
     const form = document.getElementById('contactForm');
 
     form.addEventListener('submit', async (e) => {
-        e.preventDefault(); // يمنع إعادة تحميل الصفحة
-
+        e.preventDefault();
         const data = {
             name: document.getElementById('name').value,
             _replyto: document.getElementById('email').value,
             message: document.getElementById('message').value
         };
-
         try {
             const response = await fetch('https://formspree.io/f/xblzkrlz', {
                 method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json'
-                },
+                headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify(data)
             });
-
             if (response.ok) {
                 alert('تم الإرسال بنجاح!');
                 form.reset();
