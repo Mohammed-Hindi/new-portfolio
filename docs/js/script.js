@@ -1,7 +1,5 @@
 document.addEventListener('DOMContentLoaded', () => {
-    // ==========================
     // Dark / Light Mode
-    // ==========================
     const toggleModeBtn = document.getElementById('toggleMode');
     const body = document.body;
 
@@ -58,9 +56,7 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     }
 
-    // ==========================
     // Language Switcher
-    // ==========================
     const toggleLangBtn = document.getElementById('toggleLang');
     let isArabic = true;
 
@@ -89,13 +85,17 @@ document.addEventListener('DOMContentLoaded', () => {
             proj5Desc: "متجر الكتروني بسيط لبيع الاجهزة الالكترونية",
             proj6Title: "تطبيق ويب Daily Tracker",
             proj6Desc: "يتيح للزوار باضافة المهام اليومية لديهم",
+            proj7Title: "Links-Gaza روابط قطاع غزة",
+            proj7Desc: "جميع الروابط التي تلزم سكان قطاع غزة",
             formNamePlaceholder: "أدخل اسمك",
             formEmailPlaceholder: "example@email.com",
             formMessagePlaceholder: "اكتب رسالتك هنا...",
+            viewProj: "عرض المشروع",
             langBtn: "English"
+
         },
         en: {
-            heroName: "Mohammed Hisham Ismail Al-Hindi",
+            heroName: "Mohammed Hisham Ismail El-Hindi",
             heroDesc: "Hello friends, I am a Front-end Web Developer working with HTML5, CSS3, Bootstrap5, JavaScript.",
             heroDesc2: "Welcome to my humble page, hope you like it.",
             navAbout: "About Me",
@@ -105,7 +105,7 @@ document.addEventListener('DOMContentLoaded', () => {
             portfolioTitle: "My Projects",
             skillsTitle: "My Skills",
             contactTitle: "Contact Me",
-            footerText: "© 2025 Mohammed H. Al-Hindi. All rights reserved.",
+            footerText: "© 2025 Mohammed H. El-Hindi. All rights reserved.",
             proj1Title: "Portfolio Personal Website",
             proj1Desc: "Personal website to showcase portfolio and skills.",
             proj2Title: "Landing Page",
@@ -118,9 +118,12 @@ document.addEventListener('DOMContentLoaded', () => {
             proj5Desc: "Simple online store to sell electronic devices",
             proj6Title: "Daily Tracker Web App",
             proj6Desc: "Allows visitors to add their daily tasks",
+            proj7Title: "Links-Gaza",
+            proj7Desc: "All links required by the residents of the Gaza Strip",
             formNamePlaceholder: "Enter your name",
             formEmailPlaceholder: "example@email.com",
             formMessagePlaceholder: "Write your message here...",
+            viewProj: "View Project",
             langBtn: "عربي"
         }
     };
@@ -148,6 +151,16 @@ document.addEventListener('DOMContentLoaded', () => {
         document.getElementById('proj5Desc').textContent = texts[lang].proj5Desc;
         document.getElementById('proj6Title').textContent = texts[lang].proj6Title;
         document.getElementById('proj6Desc').textContent = texts[lang].proj6Desc;
+        document.getElementById('proj7Title').textContent = texts[lang].proj7Title;
+        document.getElementById('proj7Desc').textContent = texts[lang].proj7Desc;
+        const viewProjDivs = document.getElementsByClassName('viewProj');
+        for (let i = 0; i < viewProjDivs.length; i++) {
+            const link = viewProjDivs[i].querySelector('a'); // اختار الرابط جوّا الـ div
+            if (link) {
+                link.textContent = texts[isArabic ? 'ar' : 'en'].viewProj;
+            }
+        }
+
 
         document.getElementById('skillsTitle').textContent = texts[lang].skillsTitle;
 
@@ -174,9 +187,7 @@ document.addEventListener('DOMContentLoaded', () => {
         updateLanguage(lang);
     }
 
-    // ==========================
     // Typed.js effect
-    // ==========================
     const typed = new Typed('#typing', {
         strings: ["مطور واجهات ويب", "مصمم تجربة مستخدم", "Front-End Developer"],
         typeSpeed: 50,
@@ -184,9 +195,7 @@ document.addEventListener('DOMContentLoaded', () => {
         loop: true
     });
 
-    // ==========================
     // Animate progress bars on scroll
-    // ==========================
     const progressBars = document.querySelectorAll('.skill-progress .progress-bar');
     const skillsSection = document.getElementById('skills');
 
@@ -204,9 +213,7 @@ document.addEventListener('DOMContentLoaded', () => {
     fillProgressBars();
     window.addEventListener('scroll', fillProgressBars);
 
-    // ==========================
     // Contact Form
-    // ==========================
     const form = document.getElementById('contactForm');
 
     form.addEventListener('submit', async (e) => {
