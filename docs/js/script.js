@@ -56,12 +56,16 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     }
 
+
+
+
     // Language Switcher
     const toggleLangBtn = document.getElementById('toggleLang');
     let isArabic = true;
 
     const texts = {
         ar: {
+            title:"محمد الهندي - مصمم ويب",
             heroName: "محمد هشام اسماعيل الهندي",
             heroDesc: "مرحبا احبابي,أنا محمد هشام اسماعيل الهندي مصمم واجهات امامية Front-end للمواقع الالكترونية اعمل باستخدام HTML5 , CSS3 , BOOTSTRAP5 , JAVASCRIPT",
             heroDesc2: "اتشرف بكم في صفحتي المتواضعة واتمنى ان تنال اعجابكم.",
@@ -95,6 +99,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
         },
         en: {
+            title:"Mohammed Elhindi - Web Design",
             heroName: "Mohammed Hisham Ismail El-Hindi",
             heroDesc: "Hello friends, I am a Front-end Web Developer working with HTML5, CSS3, Bootstrap5, JavaScript.",
             heroDesc2: "Welcome to my humble page, hope you like it.",
@@ -129,6 +134,7 @@ document.addEventListener('DOMContentLoaded', () => {
     };
 
     function updateLanguage(lang) {
+        document.getElementById('title').textContent = texts[lang].title;
         document.getElementById('heroName').textContent = texts[lang].heroName;
         document.getElementById('heroDesc').textContent = texts[lang].heroDesc;
         document.getElementById('heroDesc2').textContent = texts[lang].heroDesc2;
@@ -187,6 +193,10 @@ document.addEventListener('DOMContentLoaded', () => {
         updateLanguage(lang);
     }
 
+
+
+
+
     // Typed.js effect
     const typed = new Typed('#typing', {
         strings: ["مطور واجهات ويب", "مصمم تجربة مستخدم", "Front-End Developer"],
@@ -240,3 +250,63 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     });
 });
+
+const projects = [
+    { img: "img/portfolio.webp", link: "https://mohammed-hindi.github.io/my-portfolio/", keyTitle: "proj1Title", keyDesc: "proj1Desc" },
+    { img: "img/landingpage.webp", link: "https://mohammed-hindi.github.io/landing_page/", keyTitle: "proj2Title", keyDesc: "proj2Desc" },
+    { img: "img/dashboard (2).webp", link: "https://mohammed-hindi.github.io/dashboard/", keyTitle: "proj3Title", keyDesc: "proj3Desc" },
+    { img: "img/onlinemedicine.webp", link: "https://mohammed-hindi.github.io/online-medicine/", keyTitle: "proj4Title", keyDesc: "proj4Desc" },
+    { img: "img/shopmaster.webp", link: "https://mohammed-hindi.github.io/shop-master/", keyTitle: "proj5Title", keyDesc: "proj5Desc" },
+    { img: "img/dailytracker.webp", link: "https://mohammed-hindi.github.io/daily-tracker/", keyTitle: "proj6Title", keyDesc: "proj6Desc" },
+    { img: "img/links-gaza.webp", link: "https://mohammed-hindi.github.io/links-gaza/", keyTitle: "proj7Title", keyDesc: "proj7Desc" }
+];
+
+function renderProjects(lang) {
+    const portfolioContainer = document.querySelector("#portfolio .row");
+    const template = document.querySelector(".portfolio-template");
+
+    // إزالة الكاردات القديمة (باستثناء النموذج)
+    portfolioContainer.querySelectorAll(".generated-card")?.forEach(c => c.remove());
+
+    projects.forEach(project => {
+        const clone = template.cloneNode(true);
+        clone.classList.remove("portfolio-template");
+        clone.classList.add("generated-card");
+        clone.style.display = ""; // إظهار الكارد
+
+        // تحديث الصورة، العنوان، الوصف، والرابط
+        clone.querySelector("img").src = project.img;
+        clone.querySelector("img").alt = texts[lang][project.keyTitle];
+        clone.querySelector(".card-title").textContent = texts[lang][project.keyTitle];
+        clone.querySelector(".card-text").textContent = texts[lang][project.keyDesc];
+        clone.querySelector(".overlay a").href = project.link;
+        clone.querySelector(".overlay a").textContent = texts[lang].viewProj;
+
+        portfolioContainer.appendChild(clone);
+    });
+}
+
+// تحديث اللغة للبورتفوليو
+function updateLanguage(lang) {
+    document.getElementById('heroName').textContent = texts[lang].heroName;
+    document.getElementById('heroDesc').textContent = texts[lang].heroDesc;
+    document.getElementById('heroDesc2').textContent = texts[lang].heroDesc2;
+    document.querySelector('[href="#about"]').textContent = texts[lang].navAbout;
+    document.querySelector('[href="#portfolio"]').textContent = texts[lang].navPortfolio;
+    document.querySelector('[href="#skills"]').textContent = texts[lang].navSkills;
+    document.querySelector('[href="#contact"]').textContent = texts[lang].navContact;
+    document.getElementById('portfolioTitle').textContent = texts[lang].portfolioTitle;
+    document.getElementById('skillsTitle').textContent = texts[lang].skillsTitle;
+    document.getElementById('contactTitle').textContent = texts[lang].contactTitle;
+    document.getElementById('name').placeholder = texts[lang].formNamePlaceholder;
+    document.getElementById('email').placeholder = texts[lang].formEmailPlaceholder;
+    document.getElementById('message').placeholder = texts[lang].formMessagePlaceholder;
+    document.getElementById('footerText').textContent = texts[lang].footerText;
+    toggleLangBtn.textContent = texts[lang].langBtn;
+
+    renderProjects(lang); // توليد مشاريع البورتفوليو حسب اللغة
+}
+
+// أول مرة تحميل الصفحة
+const initialLang = isArabic ? 'ar' : 'en';
+renderProjects(initialLang);
