@@ -1,262 +1,0 @@
-<!DOCTYPE html>
-<html lang="ar" dir="rtl">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="بورتفوليو محمد هندي، عرض مشاريع التصميم، البرمجة، …">
-    <meta name="keywords" content="محمد هندي, بورتفوليو, تصميم, برمجة, ويب">
-    <!-- Open Graph for social media -->
-    <meta property="og:title" content="بورتفوليو محمد هندي">
-    <meta property="og:description" content="مشاهدة أعمالي ومشاريعي في التصميم والبرمجة">
-    <meta property="og:image" content="رابط إلى صورة غلاف">
-    <meta property="og:url" content="https://mohammed-hindi.github-io/new-portfolio/">
-    <meta property="og:type" content="website">
-    <title id="title">مصمم ويب - محمد الهندي</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css">
-    <link rel="stylesheet" href="./css/style.css">
-
-    </style>
-</head>
-
-<body class="light-mode">
-
-    <!-- Navbar -->
-    <nav class="navbar navbar-expand-lg navbar-light bg-light shadow-sm fixed-top">
-        <div class="container">
-            <a class="navbar-brand" href="#">
-                <img src="img/logo (2).webp" alt="logo" style="width: 50px; height: auto;">
-            </a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav ms-auto">
-                    <li class="nav-item"><a class="nav-link fs-4 fw-bold" id="navAbout" href="#about">عني</a></li>
-                    <li class="nav-item"><a class="nav-link fs-4 fw-bold" id="navPortfolio"
-                            href="#portfolio">مشاريعي</a></li>
-                    <li class="nav-item"><a class="nav-link fs-4 fw-bold" id="navSkills" href="#skills">مهاراتي</a></li>
-                    <li class="nav-item"><a class="nav-link fs-4 fw-bold" id="navContact" href="#contact">تواصل</a></li>
-                </ul>
-                <div class="d-flex ms-3">
-                    <button class="btn btn-outline-primary me-2 fs-5" id="toggleLang">English</button>
-                    <button class="btn btn-outline-secondary fs-5" id="toggleMode">🌙</button>
-                </div>
-            </div>
-        </div>
-    </nav>
-
-    <!-- Hero Section -->
-    <section id="about" class="d-flex flex-column justify-content-center align-items-center text-center mt-5">
-        <div class="container">
-            <img src="img/my-img.webp" alt="صورة محمد" class="img-fluid mb-4" style="max-width: 400px; width: 100%;">
-
-            <h1 id="heroName" class="display-3 mb-3">محمد هشام اسماعيل الهندي</h1>
-            <p class="lead"><span id="typing"></span></p>
-
-            <p id="heroDesc" class="lead"></p>
-            <p id="heroDesc2" class="lead">اتشرف بكم في صفحتي المتواضعة واتمنى ان تنال اعجابكم</p>
-        </div>
-    </section>
-
-
-
-    <!-- Portfolio Section -->
-    <section id="portfolio" class="container py-5">
-        <h2 class="mb-4 text-center animate__animated animate__fadeInUp" id="portfolioTitle">مشاريعي</h2>
-        <div class="row g-4">
-            <!-- project1 -->
-            <div class="col-12 col-md-4">
-                <div class="card h-100 portfolio-card animate__animated animate__fadeInUp">
-                    <div class="card-img-container">
-                        <img src="img/portfolio.webp" class="card-img-top" alt="مشروع 1">
-                        <div class="overlay  viewProj">
-                            <a href="https://mohammed-hindi.github.io/my-portfolio/" class="btn btn-light">عرض
-                                المشروع</a>
-                        </div>
-                    </div>
-                    <div class="card-body">
-                        <h5 class="card-title" id="proj1Title">Portfolio موقع شخصي</h5>
-                        <p class="card-text" id="proj1Desc">موقع شخصي لعرض البورتفوليو والمهارات.</p>
-                    </div>
-                </div>
-            </div>
-            <!-- project2 -->
-            <div class="col-12 col-md-4">
-                <div class="card h-100 portfolio-card animate__animated animate__fadeInUp">
-                    <div class="card-img-container">
-                        <img src="img/landingpage.webp" class="card-img-top" alt="مشروع 2">
-                        <div class="overlay viewProj">
-                            <a href="https://mohammed-hindi.github.io/landing_page/" class="btn btn-light">عرض
-                                المشروع</a>
-                        </div>
-                    </div>
-                    <div class="card-body">
-                        <h5 class="card-title" id="proj2Title">صفحة هبوط Landing Page </h5>
-                        <p class="card-text" id="proj2Desc">صفحة هبوط لمنتج Lenovo Legion 5 </p>
-                    </div>
-                </div>
-            </div>
-            <!-- project3 -->
-            <div class="col-12 col-md-4">
-                <div class="card h-100 portfolio-card animate__animated animate__fadeInUp">
-                    <div class="card-img-container">
-                        <img src="img/dashboard (2).webp" class="card-img-top" alt="مشروع 3">
-                        <div class="overlay viewProj">
-                            <a href="https://mohammed-hindi.github.io/dashboard/" class="btn btn-light">عرض المشروع</a>
-                        </div>
-                    </div>
-                    <div class="card-body">
-                        <h5 class="card-title" id="proj3Title">لوحة تحكم Dashboard</h5>
-                        <p class="card-text" id="proj3Desc">لوحة تحكم إدارية لإدارة المنتجات والطلبات.</p>
-                    </div>
-                </div>
-            </div>
-            <!-- project4 -->
-            <div class="col-12 col-md-4">
-                <div class="card h-100 portfolio-card animate__animated animate__fadeInUp">
-                    <div class="card-img-container">
-                        <img src="img/onlinemedicine.webp" class="card-img-top" alt="مشروع 4">
-                        <div class="overlay viewProj">
-                            <a href="https://mohammed-hindi.github.io/online-medicine/" class="btn btn-light">عرض
-                                المشروع</a>
-                        </div>
-                    </div>
-                    <div class="card-body">
-                        <h5 class="card-title" id="proj4Title">موقع Online-Medicine</h5>
-                        <p class="card-text" id="proj4Desc">موقع يتيح للزوار حجز مواعيد لدى عيادة</p>
-                    </div>
-                </div>
-            </div>
-            <!-- project5 -->
-            <div class="col-12 col-md-4">
-                <div class="card h-100 portfolio-card animate__animated animate__fadeInUp">
-                    <div class="card-img-container">
-                        <img src="img/shopmaster.webp" class="card-img-top" alt="مشروع 5">
-                        <div class="overlay viewProj">
-                            <a href="https://mohammed-hindi.github.io/shop-master/" class="btn btn-light">عرض
-                                المشروع</a>
-                        </div>
-                    </div>
-                    <div class="card-body">
-                        <h5 class="card-title" id="proj5Title">موقع Shop Master</h5>
-                        <p class="card-text" id="proj5Desc">متجر الكتروني بسيط لبيع الاجهزة الالكترونية</p>
-                    </div>
-                </div>
-            </div>
-            <!-- project6 -->
-            <div class="col-12 col-md-4">
-                <div class="card h-100 portfolio-card animate__animated animate__fadeInUp">
-                    <div class="card-img-container">
-                        <img src="img/dailytracker.webp" class="card-img-top" alt="مشروع 6">
-                        <div class="overlay viewProj">
-                            <a href="https://mohammed-hindi.github.io/daily-tracker/" class="btn btn-light">عرض
-                                المشروع</a>
-                        </div>
-                    </div>
-                    <div class="card-body">
-                        <h5 class="card-title" id="proj6Title">تطبيق ويب Daily Tracker</h5>
-                        <p class="card-text" id="proj6Desc">يتيح للزوار باضافة المهام اليومية لديهم</p>
-                    </div>
-                </div>
-            </div>
-              <!-- project7 -->
-            <div class="col-12 col-md-4">
-                <div class="card h-100 portfolio-card animate__animated animate__fadeInUp">
-                    <div class="card-img-container">
-                        <img src="img/links-gaza.webp" class="card-img-top" alt="مشروع 6">
-                        <div class="overlay viewProj">
-                            <a href="https://mohammed-hindi.github.io/links-gaza/" class="btn btn-light">عرض
-                                المشروع</a>
-                        </div>
-                    </div>
-                    <div class="card-body">
-                        <h5 class="card-title" id="proj7Title">Links-Gaza روابط قطاع غزة</h5>
-                        <p class="card-text" id="proj7Desc">جميع الروابط التي تلزم سكان قطاع غزة</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Skills Section -->
-    <section id="skills" class="container py-5">
-        <h2 class="mb-4 text-center animate__animated animate__fadeInUp" id="skillsTitle">مهاراتي</h2>
-        <div class="row g-3">
-            <div class="col-md-3 col-lg-3">
-                <h5>HTML</h5>
-                <div class="progress skill-progress">
-                    <div class="progress-bar bg-success" style="width: 0%" data-percentage="100"></div>
-                </div>
-            </div>
-            <div class="col-md-3 col-lg-3">
-                <h5>CSS</h5>
-                <div class="progress skill-progress">
-                    <div class="progress-bar bg-info" style="width: 0%" data-percentage="100"></div>
-                </div>
-            </div>
-            <div class="col-md-3 col-lg-3">
-                <h5>BOOTSTRAP</h5>
-                <div class="progress skill-progress">
-                    <div class="progress-bar bg-danger" style="width: 0%" data-percentage="100"></div>
-                </div>
-            </div>
-
-            <div class="col-md-3 col-lg-3">
-                <h5>JavaScript</h5>
-                <div class="progress skill-progress">
-                    <div class="progress-bar bg-warning" style="width: 0%" data-percentage="100"></div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Contact Section -->
-    <section id="contact" class="container py-5">
-        <h2 class="mb-4 text-center animate__animated animate__fadeInUp" id="contactTitle">تواصل معي</h2>
-
-        <div class="row justify-content-center">
-            <div class="col-md-8">
-                <form id="contactForm" class="p-4 shadow rounded bg-light">
-                    <div class="mb-3">
-                        <label for="name" class="form-label" id="nameLabel">الاسم</label>
-                        <input name="name" type="text" class="form-control" id="name" placeholder="أدخل اسمك">
-                    </div>
-                    <div class="mb-3">
-                        <label for="email" class="form-label" id="emailLabel">البريد الإلكتروني</label>
-                        <input name="_replyto" type="email" class="form-control" id="email"
-                            placeholder="example@email.com">
-                    </div>
-                    <div class="mb-3">
-                        <label for="message" class="form-label" id="messageLabel">الرسالة</label>
-                        <textarea name="message" class="form-control" id="message" rows="5"
-                            placeholder="اكتب رسالتك هنا..."></textarea>
-                    </div>
-                    <button type="submit" class="btn btn-primary w-100" id="sendBtn">إرسال</button>
-                </form>
-
-                <div class="text-center mt-4">
-                    <a href="https://www.facebook.com/mohammed.elhindi.796" class="mx-2 text-primary fs-4"><i
-                            class="bi bi-facebook"></i></a>
-                    <a href="www.linkedin.com/in/mohammed-hindi-048baa386" class="mx-2 text-primary fs-4"><i
-                            class="bi bi-linkedin"></i></a>
-                </div>
-            </div>
-        </div>
-    </section>
-
-
-    <!-- Footer -->
-    <footer class="bg-light py-3 text-center" id="footerText">
-        &copy; 2025 محمد الهندي. جميع الحقوق محفوظة.
-    </footer>
-
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
-    <script src="./js/script.js"></script>
-</body>
-
-</html>
