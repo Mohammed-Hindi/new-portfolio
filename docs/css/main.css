@@ -1253,7 +1253,7 @@ button {
 	-webkit-transform: scale(1.0);
 	-ms-transform: scale(1.0);
 	transform: scale(1.0);
-	-webkit-backface-visibility: hidden;
+	
 	position: fixed;
 	top: 0;
 	left: 0;
@@ -1282,7 +1282,7 @@ button {
 	-webkit-transition-delay: 0.75s;
 	-ms-transition-delay: 0.75s;
 	transition-delay: 0.75s;
-	background-image: linear-gradient(to top, rgba(19, 21, 25, 0.5), rgba(19, 21, 25, 0.5)), url("../../images/overlay.png");
+	background-image: linear-gradient(to top, rgba(19, 21, 25, 0.5), rgba(19, 21, 25, 0.5));
 	background-size: auto,
 		256px 256px;
 	background-position: center,
@@ -1301,7 +1301,6 @@ button {
 	-webkit-transition: -webkit-transform 0.325s ease-in-out, -webkit-filter 0.325s ease-in-out;
 	-ms-transition: -ms-transform 0.325s ease-in-out, -ms-filter 0.325s ease-in-out;
 	transition: transform 0.325s ease-in-out, filter 0.325s ease-in-out;
-	background-image: url("../../images/bg.jpg");
 	background-position: center;
 	background-size: cover;
 	background-repeat: no-repeat;
